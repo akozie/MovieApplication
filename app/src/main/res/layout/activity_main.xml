@@ -17,7 +17,7 @@
             android:layout_gravity="center"
             android:visibility="gone"/>
 
-        <TextView
+        <com.google.android.material.textview.MaterialTextView
             android:id="@+id/txt_error_popular"
             android:layout_width="match_parent"
             android:layout_height="match_parent"

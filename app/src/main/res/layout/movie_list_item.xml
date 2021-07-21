@@ -27,7 +27,7 @@
 
         </ImageView>
 
-        <TextView
+        <com.google.android.material.textview.MaterialTextView
             android:id="@+id/cv_movie_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -39,7 +39,7 @@
             android:maxLines="1"
             android:ellipsize="end"/>
 
-        <TextView
+        <com.google.android.material.textview.MaterialTextView
             android:id="@+id/cv_movie_release_date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

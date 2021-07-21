@@ -16,6 +16,7 @@ import com.example.movieapplication.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
+    //Initializing variables
     private lateinit var binding: ActivityMainBinding
     private lateinit var viewModel: MainActivityViewModel
 
@@ -39,8 +40,8 @@ class MainActivity : AppCompatActivity() {
         gridLayoutManager.spanSizeLookup = object : GridLayoutManager.SpanSizeLookup() {
             override fun getSpanSize(position: Int): Int {
                 val viewType = movieAdapter.getItemViewType(position)
-                if (viewType == movieAdapter.MOVIE_VIEW_TYPE) return  1    // Movie_VIEW_TYPE will occupy 1 out of 3 span
-                else return 3                                              // NETWORK_VIEW_TYPE will occupy all 3 span
+                if (viewType == movieAdapter.MOVIE_VIEW_TYPE) return  1
+                else return 3
             }
         };
 
@@ -53,6 +54,7 @@ class MainActivity : AppCompatActivity() {
             movieAdapter.submitList(it)
         })
 
+        //Observing the network state
         viewModel.networkState.observe(this, Observer {
             binding.progressBarPopular.visibility = if (viewModel.listIsEmpty() && it == NetworkState.LOADING) View.VISIBLE else View.GONE
             binding.txtErrorPopular.visibility = if (viewModel.listIsEmpty() && it == NetworkState.ERROR) View.VISIBLE else View.GONE
